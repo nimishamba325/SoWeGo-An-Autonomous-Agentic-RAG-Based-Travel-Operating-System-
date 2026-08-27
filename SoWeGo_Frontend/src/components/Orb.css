@@ -1,0 +1,25 @@
+.orb-container {
+  /* 🛡️ FIXED: Always centers relative to the window viewport with top offset */
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 64px);
+  z-index: -1;
+  
+  /* 🛡️ INTERACTION: Required for the button hover effect to trigger shader changes */
+  pointer-events: auto; 
+  
+  /* 🛡️ CENTERING: Mathematical centering logic */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* 🛡️ THE CLIP-KILLER: Force overflow visible on the orb and its direct containers */
+  overflow: visible !important;
+}
+
+/* 🛡️ GLOBAL OVERRIDE: Ensures the 'main' tag and 'section' don't clip the background */
+main, section#home {
+  overflow: visible !important;
+}
